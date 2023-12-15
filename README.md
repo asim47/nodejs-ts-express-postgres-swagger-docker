@@ -8,7 +8,7 @@ Clone the repo:
 
 ```bash
 git clone <link>
-cd nodejs-ts-express-mongoose-swagger-eslint-docker-prettier-husky-2023
+cd <folder name>
 ```
 
 Install the dependencies:
