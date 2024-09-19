@@ -20,7 +20,4 @@ function down(knex: Knex) {
   `);
 }
 
-export {
-  up,
-  down,
-};
+export { up, down };

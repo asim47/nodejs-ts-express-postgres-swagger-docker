@@ -9,7 +9,7 @@ export const jwtAuth = (
   req: Request,
   res: Response,
   next: NextFunction,
-  userTypeToCheck: UserTypes[],
+  userTypeToCheck: UserTypes,
 ): void | Response => {
   try {
     const token: string = req.headers['access-token']?.toString() || '';
@@ -19,14 +19,13 @@ export const jwtAuth = (
     const decoded: any = JWT.verify(token, Jwt.JWT_SECRET || '');
     if (decoded.isRefreshToken) return res.status(400).json({ Error: true, Msg: 'User Token Is Invalid or Expired!' });
 
-    if (!decoded.types) return res.status(400).json({ Error: true, Msg: 'User Token Is Invalid or Expired!' });
+    if (!decoded.Usertype) return res.status(400).json({ Error: true, Msg: 'User Token Is Invalid or Expired!' });
 
-    const types: UserTypes[] = JSON.parse(decoded.types);
+    const Usertype: UserTypes = JSON.parse(decoded.types);
 
-    if (types.length === 0) return res.status(400).json({ Error: true, Msg: 'User Token Is Invalid or Expired!' });
+    if (Usertype.length === 0) return res.status(400).json({ Error: true, Msg: 'User Token Is Invalid or Expired!' });
 
-    if (!userTypeToCheck.every((type) => types.includes(type)))
-      return res.status(401).json({ Error: true, Msg: 'Unauthorized' });
+    if (Usertype !== userTypeToCheck) res.status(401).json({ Error: true, Msg: 'Unauthorized' });
 
     req.userId = decoded.id;
 

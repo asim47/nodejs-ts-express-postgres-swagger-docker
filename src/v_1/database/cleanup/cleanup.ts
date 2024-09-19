@@ -33,7 +33,7 @@ async function cleanUpDatabase() {
         `
         DROP SCHEMA public CASCADE;
         CREATE SCHEMA public;
-        `
+        `,
       );
       Logger.debug(query.toSQL().toNative());
       await query;

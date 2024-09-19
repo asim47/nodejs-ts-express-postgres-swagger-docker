@@ -16,7 +16,7 @@ export class UserController {
   }
 
   private UserRouter(): void {
-    this.router.get("/", async (req: Request, res: Response) => {
+    this.router.get('/', async (req: Request, res: Response) => {
       let body;
       try {
         const db = res.locals.db as Db;
@@ -31,6 +31,6 @@ export class UserController {
         genericError(error, res);
       }
       res.json(body);
-    })
+    });
   }
 }

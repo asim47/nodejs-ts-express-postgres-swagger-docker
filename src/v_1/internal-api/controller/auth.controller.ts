@@ -21,9 +21,7 @@ export class AuthController {
     this.router.post('/register', async (req: RequestBody<AuthModel.RegisterUserBody>, res: Response) => {
       let body;
       try {
-        await AuthModel.RegisterUserBodySchema.validateAsync(req.body, {
-          abortEarly: false,
-        });
+        await AuthModel.RegisterUserBodySchema.parseAsync(req.body);
 
         const db = res.locals.db as Db;
 

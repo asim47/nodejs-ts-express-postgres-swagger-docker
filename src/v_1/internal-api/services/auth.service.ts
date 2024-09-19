@@ -15,6 +15,5 @@ export class AuthService {
 
   public async CreateUser(user: Partial<Entities.User>): Promise<void> {
     Logger.info('AuthService.CreateUser', { user });
-
   }
 }

@@ -10,12 +10,12 @@ export interface User {
 }
 
 export enum UserStatus {
-  Active = "Active",
-  Inactive = "Inactive",
-  Blocked = "Blocked",
-} 
+  Active = 'Active',
+  Inactive = 'Inactive',
+  Blocked = 'Blocked',
+}
 
 export enum UserTypes {
-  Customer = "Customer",
-  Admin = "Admin",
+  User = 'User',
+  Admin = 'Admin',
 }

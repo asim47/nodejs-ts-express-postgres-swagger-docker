@@ -15,10 +15,7 @@ export class UserService {
     this.db = args.db;
   }
 
-  public async GetUser(
-    where: Partial<Entities.User>,
-  ): Promise<void> {
+  public async GetUser(where: Partial<Entities.User>): Promise<void> {
     Logger.info('UserService.GetUser', { where });
-
   }
 }

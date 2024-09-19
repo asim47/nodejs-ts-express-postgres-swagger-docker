@@ -30,8 +30,9 @@ export class ApiController {
     this.router.use('/auth', new AuthController().router);
 
     this.router.use((req, res, next) => {
-      jwtAuth(req, res, next, [UserTypes.Customer]);
+      jwtAuth(req, res, next, UserTypes.User);
     });
+
     this.router.use('/user', new UserController().router);
     this.router.use('*', (req: express.Request, res: express.Response): express.Response => {
       try {

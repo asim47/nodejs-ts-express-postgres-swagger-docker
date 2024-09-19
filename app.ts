@@ -1,14 +1,13 @@
 import express from 'express';
-import { versionNo } from './src/helpers/contants';
-import { Logger } from './src/helpers/logger';
-import { Swagger } from './src/helpers/env';
+import { Logger } from './src/v_1/helpers/logger';
+import { Swagger } from './src/v_1/helpers/env';
 import helmet from 'helmet';
 import xss from 'xss-clean';
 import SwaggerUI from 'swagger-ui-express';
 import SwaggerDocs from './swagger.json';
-import { ApiController } from './src/internal-api/controller';
-import { Db } from './src/database/db';
-import { SeedsController } from './src/seeds/seeds.controller';
+import { ApiController } from './src/v_1/internal-api/controller';
+import { Db } from './src/v_1/database/db';
+import { SeedsController } from './src/v_1/seeds/seeds.controller';
 class App {
   constructor() {
     this.app = express();
@@ -20,9 +19,12 @@ class App {
 
   private middlewares(): void {
     Logger.info('Middlewares are being initialized...');
+
     this.app.use(xss());
     this.app.use(helmet());
-    this.app.use(Swagger.PATH, SwaggerUI.serve, SwaggerUI.setup(SwaggerDocs));
+
+    this.app.use(Swagger.PATH + '/v_1', SwaggerUI.serve, SwaggerUI.setup(SwaggerDocs));
+
     this.app.use((req, res, next) => {
       const db = new Db();
       res.locals.db = db;
@@ -48,7 +50,7 @@ class App {
   private routes(): void {
     Logger.info('Routes are being initialized...');
 
-    this.app.use(`/api/${versionNo}/internal`, new ApiController().router);
+    this.app.use(`/api/v_1/internal`, new ApiController().router);
 
     this.app.use(`*`, (req, res) => {
       res.status(404).json({ message: 'Route not Found' });

@@ -1,6 +1,0 @@
-
-
-
-const DATA = {
-  name: "asim"
-}

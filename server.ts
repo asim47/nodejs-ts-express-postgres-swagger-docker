@@ -1,6 +1,6 @@
 import app from './app';
-import { Server } from './src/helpers/env';
-import { Logger } from './src/helpers/logger';
+import { Server } from './src/v_1/helpers/env';
+import { Logger } from './src/v_1/helpers/logger';
 
 const port: string | number = Server.PORT;
 

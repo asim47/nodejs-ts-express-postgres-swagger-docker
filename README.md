@@ -1,9 +1,9 @@
-
 # RESTful API Node Typescript Server Boilerplate
 
 By running a single command, you will get a production-ready Node.js TypeScript app installed and fully configured on your machine. The app comes with many built-in features, such as authentication using JWT, request validation, docker support, API documentation, etc. For more details, check the features list below.
 
 ## Quick Start
+
 Clone the repo:
 
 ```bash
@@ -48,9 +48,9 @@ Running the server will automatically run the database instance as well.
 - **ES9**: latest ECMAScript features
 - **Static Typing**: [TypeScript](https://www.typescriptlang.org/) static typing using typescript
 - **Hot Reloading**: [Concurrently](https://github.com/open-cli-tools/concurrently) Hot realoding with concurrently
-- **SQL database**: [PostgreSQL](https://www.postgresql.org/) 
+- **SQL database**: [PostgreSQL](https://www.postgresql.org/)
 - **Knex**: [Knex](https://knexjs.org/) For working with database
-- **Joi**: [Joi](https://joi.dev/) For API validation 
+- **Zod**: [Zod](https://zod.dev/) For API validation
 - **Logging**: using [pino](https://github.com/pinojs/pino)
 - **API documentation**: with [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc) and [swagger-ui-express](https://github.com/scottie1984/swagger-ui-express)
 - **Environment variables**: using [dotenv](https://github.com/motdotla/dotenv)
@@ -61,4 +61,3 @@ Running the server will automatically run the database instance as well.
 - **Linting**: with [ESLint](https://eslint.org) and [Prettier](https://prettier.io)
 - **Editor config**: consistent editor configuration using [EditorConfig](https://editorconfig.org)
 - **Husky**: for lint checking on commit
-

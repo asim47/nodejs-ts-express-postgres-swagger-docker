@@ -1,7 +1,7 @@
 prepare:
 	npm install
 migrate:
-	npm run migrator
+	npm run migrator-v1
 build:
 	docker-compose build
 dev:

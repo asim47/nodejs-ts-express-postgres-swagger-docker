@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { Jwt } from '../helpers/env';
+import { Jwt } from './env';
 
 // Function to generate JWT token
 export function createAccessToken(payload: Record<string, string>): string {

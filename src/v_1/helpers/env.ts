@@ -47,12 +47,11 @@ export const AWS = {
   BUCKET_NAME: Process.env.AWS_S3_BUCKET_NAME as string,
 };
 
-
 export const ENV = {
   Server,
   Jwt,
   LoggerLevel,
   Database,
   Swagger,
-  AWS
+  AWS,
 };
